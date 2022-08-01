@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
+import useOpacity from "../hooks/useOpacity";
 import "./Card.scss";
 
 const Card = ({ children }) => {
-    const [opacity, setOpacity] = useState(0);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setOpacity(1);
-        },100)
-    }, []);
-
+    const opacity = useOpacity(100);
+    
     return (
         <div className="card" style={{ opacity }}>
             {children}
