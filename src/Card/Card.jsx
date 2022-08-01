@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import useOpacity from "../hooks/useOpacity";
+import React from "react";
+import useFadeStyle from "../hooks/useFadeStyle";
 import "./Card.scss";
 
 const Card = ({ children }) => {
-    const opacity = useOpacity(100);
-    
+    const fadeStyle = useFadeStyle({ delay: 100, duration: 1 });
+
     return (
-        <div className="card" style={{ opacity }}>
+        <div className="card" style={fadeStyle}>
             {children}
         </div>
     );

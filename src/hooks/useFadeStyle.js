@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const useOpacity = delay => {
+const useFadeStyle = ({delay, duration}) => {
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ const useOpacity = delay => {
         return () => clearTimeout(temp);
     }, [delay]);
 
-    return opacity;
+    return {opacity, transition: `${duration}s`};
 }
 
-export default useOpacity;
+export default useFadeStyle;
